@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+  "dev": "next dev",
+  "build": "next build",
+  "start": "node index.js",
+  "lint": "next lint"
+},
   "dependencies": {
+    "express": "^4.19.2",
     "js-cookie": "^3.0.5",
     "next": "14.2.7",
     "nodemailer": "^6.9.15",
