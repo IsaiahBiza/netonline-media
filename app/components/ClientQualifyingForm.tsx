@@ -36,6 +36,8 @@ export default function ClientQualifyingForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    console.log('Form Data before submission:', formData); // Log form data for debugging
+
     try {
       const response = await fetch('/api/send-email', {
         method: 'POST',
@@ -59,7 +61,8 @@ export default function ClientQualifyingForm() {
           additionalInfo: '',
         });
       } else {
-        console.error('Error submitting the form');
+        const errorData = await response.json();
+        console.error('Error submitting the form:', errorData);
       }
     } catch (error) {
       console.error('Error submitting the form:', error);
