@@ -10,6 +10,9 @@ export default function ContactPage() {
     message: '',
   });
 
+  // New state to track form submission status
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   // Handle form input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -31,13 +34,13 @@ export default function ContactPage() {
 
       if (response.ok) {
         console.log('Contact form submitted successfully');
+        setIsSubmitted(true); // Set submission status to true to show success message
         setFormData({
           name: '',
           email: '',
           subject: '',
           message: '',
         });
-        // Optionally show a success message to the user
       } else {
         console.error('Error submitting the contact form');
       }
@@ -50,6 +53,14 @@ export default function ContactPage() {
     <section className="bg-lightGrey py-16 px-6">
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-center text-darkGrey mb-8">Contact Us</h2>
+
+        {/* Conditionally render success message */}
+        {isSubmitted && (
+          <div className="text-center mb-6">
+            <p className="text-green-600 text-lg font-medium">Form Submission Successful!</p>
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
           
           {/* Name */}

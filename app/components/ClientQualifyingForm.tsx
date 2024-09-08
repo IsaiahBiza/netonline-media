@@ -15,6 +15,9 @@ export default function ClientQualifyingForm() {
     additionalInfo: '',
   });
 
+  // New state to track form submission status
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   // Handle form input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -49,7 +52,8 @@ export default function ClientQualifyingForm() {
 
       if (response.ok) {
         console.log('Form submitted successfully');
-        // Optionally, reset the form or show a success message
+        // Reset the form and set isSubmitted to true to show the success message
+        setIsSubmitted(true);
         setFormData({
           name: '',
           email: '',
@@ -73,6 +77,14 @@ export default function ClientQualifyingForm() {
     <section className="bg-lightGrey py-16 px-6">
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-center text-darkGrey mb-8">Client Qualifying Form</h2>
+        
+        {/* Conditionally render success message */}
+        {isSubmitted && (
+          <div className="text-center mb-6">
+            <p className="text-green-600 text-lg font-medium">Form Submission Successful!</p>
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
           
           {/* Name */}
@@ -244,3 +256,4 @@ export default function ClientQualifyingForm() {
     </section>
   );
 }
+
