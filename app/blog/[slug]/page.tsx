@@ -39,4 +39,4 @@ export default async function Post({ params }: PostProps) {
     </div>
   );
 }
-
+//run build and commit
