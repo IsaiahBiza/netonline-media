@@ -1,38 +1,40 @@
 'use client';
 
-import './globals.css';
+import '../styles/globals.css'; // Import Tailwind and custom global styles
 import { ReactNode, useEffect } from 'react';
 import NavBar from './components/NavBar';
-import CookieBanner from './components/CookieBanner'; // Import Cookie Banner
+import CookieBanner from './components/CookieBanner';
+import HeroSection from './components/HeroSection'; // Import the HeroSection component
+import { usePathname } from 'next/navigation'; // Import the usePathname hook
 import Cookies from 'js-cookie';
-import Link from 'next/link'; // Import Link from Next.js
+import Link from 'next/link';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const pathname = usePathname(); // Get the current route
+
   // Add Google Analytics tracking only if the user has accepted cookies
   useEffect(() => {
     const hasConsent = Cookies.get('cookieConsent');
-  
+
     if (hasConsent === 'accepted') {
-      (function (i: any, s: any, o: string, g: string, r: string, a: HTMLScriptElement | null, m: HTMLElement | null) {
+      (function (i: any, s: any, o: string, g: string, r: string, a?: HTMLScriptElement, m?: HTMLElement) {
         i['GoogleAnalyticsObject'] = r;
         i[r] = i[r] || function () {
           (i[r].q = i[r].q || []).push(arguments);
-        }, i[r].l = 1 * new Date().getTime();
-        
-        a = s.createElement(o) as HTMLScriptElement; // Cast as HTMLScriptElement
+        };
+        i[r].l = new Date().getTime();
+        a = s.createElement(o) as HTMLScriptElement;
         m = s.getElementsByTagName(o)[0] as HTMLElement;
-        if (m && m.parentNode) {
-          m.parentNode.insertBefore(a, m);
-        }
-        a.async = true; // Now this works correctly
+        a.async = true;
         a.src = g;
-      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga', null, null);
-  
+        m?.parentNode?.insertBefore(a, m);
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
       (window as any).ga('create', 'G-BPH314L1S0', 'auto');
       (window as any).ga('send', 'pageview');
     }
   }, []);
-  
+
   return (
     <html lang="en">
       <head>
@@ -40,42 +42,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Isaiah Bizabani" />
         <meta name="keywords" content="AI-powered solutions London, Custom AI solutions UK, AI business automation, Generative AI London, AI content creation UK" />
-
-        {/* Schema Markup for SEO */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Netonline Media",
-              "description": "AI-powered business solutions, including AI chatbots, content creation, and generative AI solutions in London, UK.",
-              "url": "https://netonlinemedia.com",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "7 Harrow Close",
-                "addressLocality": "Chessington",
-                "addressRegion": "Surrey",
-                "postalCode": "KT9 2HR",
-                "addressCountry": "UK"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+442037293305",
-                "contactType": "Sales",
-                "email": "info@netonlinemedia.com"
-              }
-            }),
-          }}
-        />
         <title>Netonline Media | AI Solutions</title>
       </head>
       <body className="bg-lightGrey text-darkGrey">
         {/* Navbar */}
         <NavBar />
 
-        {/* Page-specific content will go here */}
-        <main>{children}</main>
+        {/* Conditionally render the hero section only on the homepage */}
+        {pathname === '/' && <HeroSection />}
+
+        {/* Page-specific content */}
+        <main className="container mx-auto p-4">{children}</main>
 
         {/* Cookie Banner */}
         <CookieBanner />
@@ -85,7 +62,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Company Information */}
             <div className="text-center md:text-left mb-4">
-              <h3 className="text-2xl font-bold mb-2">Netonline Media</h3>
+              <h3 className="text-2xl font-bold mb-2 text-primaryRed">Netonline Media</h3>
               <p className="text-gray-400">AI-Powered Business Solutions</p>
             </div>
 

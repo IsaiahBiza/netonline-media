@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ServicesHeroSection() {
   return (
-    <section className="h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-r from-wandlePink via-wandlePurple to-wandleLightBlue">
+    <section className="w-screen h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-r from-wandlePink via-wandlePurple to-wandleLightBlue">
       <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight">
         Transform Your Business with Generative AI
       </h1>
@@ -17,3 +17,4 @@ export default function ServicesHeroSection() {
     </section>
   );
 }
+

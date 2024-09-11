@@ -1,4 +1,3 @@
-import HeroSection from "./components/HeroSection";
 import Introduction from "./components/Introduction";
 import ServicesOverview from "./components/ServicesOverview";
 import Testimonials from "./components/Testimonials";
@@ -44,9 +43,8 @@ export default function Home() {
         />
       </Head>
       <div>
-        {/* Hero Section for the Homepage */}
-        <HeroSection />
-
+        {/* Remove the Hero Section from here */}
+        
         {/* Introduction Section */}
         <Introduction />
 

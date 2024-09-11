@@ -1,0 +1,60 @@
+/* styles/blog.module.css */
+
+/* Container for the blog page */
+.blogContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading for the blog title */
+.blogTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+/* Styling for the list of blog posts */
+.blogPostList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual blog post item */
+.blogPostItem {
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.blogPostItem:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the blog post title */
+.blogPostTitle {
+  font-size: 1.75rem;
+  color: #0070f3;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.blogPostTitle:hover {
+  color: #005bb5;
+}
+
+/* Blog post date styling */
+.blogPostDate {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}

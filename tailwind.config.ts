@@ -4,11 +4,10 @@ module.exports = {
     extend: {
       colors: {
         // Netonline Media primary colors
-        primaryRed: '#e41e26',   // Red
-        darkGrey: '#333133',     // Dark Grey
-        lightGrey: '#f5f5f5',    // Light Grey
-
-        // Wandle colors
+        primaryRed: '#e41e26',   // Red for hover
+        darkGrey: '#333133',     // Default text color for links
+        lightGrey: '#f5f5f5',    // Other UI elements
+        // Wandle colors used for hero section gradients
         wandlePink: '#c03162',
         wandleDarkPink: '#950a2a',
         wandleBlue: '#3163b1',
@@ -23,9 +22,12 @@ module.exports = {
     },
   },
   content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    './app/**/*.{js,ts,jsx,tsx}',     // Include Next.js App Router content
+    './pages/**/*.{js,ts,jsx,tsx}',   // Include pages directory
+    './components/**/*.{js,ts,jsx,tsx}', // Include components
   ],
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'), // Include the typography plugin
+  ],
 };
+

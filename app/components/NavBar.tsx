@@ -35,7 +35,7 @@ export default function NavBar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8 relative">
-          <Link href="/" className="py-2 hover:text-primaryRed transition duration-200">Home</Link>
+          <Link href="/" className="text-darkGrey hover:text-primaryRed py-2 transition duration-200">Home</Link>
 
           {/* Services with Dropdown */}
           <div
@@ -43,19 +43,30 @@ export default function NavBar() {
             onMouseEnter={() => toggleDropdown(true)}
             onMouseLeave={() => toggleDropdown(false)}
           >
-            <Link href="/services" className="py-2 hover:text-primaryRed transition duration-200">Services</Link> {/* Wrap Services in Link */}
+            <Link href="/services" className="text-darkGrey hover:text-primaryRed py-2 transition duration-200">
+              Services
+            </Link>
             {isDropdownOpen && (
               <div className="absolute left-0 top-[90%] mt-0 w-48 bg-white shadow-lg rounded-lg py-2 z-10">
-                <Link href="/services/custom-ai" className="block px-4 py-2 hover:bg-gray-200">Custom Generative AI</Link>
-                <Link href="/services/ai-content" className="block px-4 py-2 hover:bg-gray-200">AI-Powered Content Creation</Link>
-                <Link href="/services/ai-chatbots" className="block px-4 py-2 hover:bg-gray-200">LLM-Based Chatbots</Link>
-                <Link href="/services/ai-personalization" className="block px-4 py-2 hover:bg-gray-200">AI-Driven Personalization</Link>
+                <Link href="/services/custom-ai" className="block px-4 py-2 text-darkGrey hover:bg-gray-200 hover:text-primaryRed transition">
+                  Custom Generative AI
+                </Link>
+                <Link href="/services/ai-content" className="block px-4 py-2 text-darkGrey hover:bg-gray-200 hover:text-primaryRed transition">
+                  AI-Powered Content Creation
+                </Link>
+                <Link href="/services/ai-chatbots" className="block px-4 py-2 text-darkGrey hover:bg-gray-200 hover:text-primaryRed transition">
+                  LLM-Based Chatbots
+                </Link>
+                <Link href="/services/ai-personalization" className="block px-4 py-2 text-darkGrey hover:bg-gray-200 hover:text-primaryRed transition">
+                  AI-Driven Personalization
+                </Link>
               </div>
             )}
           </div>
 
-          <Link href="/about" className="py-2 hover:text-primaryRed transition duration-200">About Us</Link>
-          <Link href="/contact" className="py-2 hover:text-primaryRed transition duration-200">Contact</Link>
+          <Link href="/about" className="text-darkGrey hover:text-primaryRed py-2 transition duration-200">About Us</Link>
+          <Link href="/contact" className="text-darkGrey hover:text-primaryRed py-2 transition duration-200">Contact</Link>
+          <Link href="/blog" className="text-darkGrey hover:text-primaryRed py-2 transition duration-200">Blog</Link>
 
           {/* Get Started button */}
           <Link href="/qualifying-form" className="ml-4 bg-primaryRed text-white py-2 px-4 rounded-lg hover:bg-red-600 transition">
@@ -78,16 +89,16 @@ export default function NavBar() {
       {/* Mobile Menu Dropdown */}
       {isOpen && (
         <nav className="md:hidden bg-darkGrey text-white">
-          <Link href="/" className="block px-4 py-2 hover:text-primaryRed transition duration-200" onClick={toggleMenu}>
+          <Link href="/" className="block px-4 py-2 text-white hover:text-primaryRed transition duration-200" onClick={toggleMenu}>
             Home
           </Link>
-          <Link href="/services" className="block px-4 py-2 hover:text-primaryRed transition duration-200" onClick={toggleMenu}>
+          <Link href="/services" className="block px-4 py-2 text-white hover:text-primaryRed transition duration-200" onClick={toggleMenu}>
             Services
           </Link>
-          <Link href="/about" className="block px-4 py-2 hover:text-primaryRed transition duration-200" onClick={toggleMenu}>
+          <Link href="/about" className="block px-4 py-2 text-white hover:text-primaryRed transition duration-200" onClick={toggleMenu}>
             About Us
           </Link>
-          <Link href="/contact" className="block px-4 py-2 hover:text-primaryRed transition duration-200" onClick={toggleMenu}>
+          <Link href="/contact" className="block px-4 py-2 text-white hover:text-primaryRed transition duration-200" onClick={toggleMenu}>
             Contact
           </Link>
 

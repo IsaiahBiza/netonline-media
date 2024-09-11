@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Animated gradient background */
 .animated-gradient-bg {
   background: linear-gradient(270deg, #BE25A0, #FFCF00, #D843CF, #9754E6, #FF0004);
   background-size: 600% 600%;
   animation: gradientAnimation 12s ease infinite;
 }
 
+/* Keyframes for gradient animation */
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -19,3 +21,28 @@
     background-position: 0% 50%;
   }
 }
+
+/* Custom global styles */
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+/* Ensures images are proportionally scaled and don't look too tall */
+
