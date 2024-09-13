@@ -13,8 +13,10 @@ export default function Services() {
         <title>AI Services | Netonline Media</title>
       </Head>
 
-      {/* Hero Section */}
-      <ServicesHeroSection />
+       {/* Hero Section */}
+       <div className="w-full">
+        <ServicesHeroSection />
+      </div>
 
       {/* Services Overview Section */}
       <ServicesOverview /> {/* This should import correctly now */}

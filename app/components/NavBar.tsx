@@ -101,6 +101,9 @@ export default function NavBar() {
           <Link href="/contact" className="block px-4 py-2 text-white hover:text-primaryRed transition duration-200" onClick={toggleMenu}>
             Contact
           </Link>
+          <Link href="/blog" className="block px-4 py-2 text-white hover:text-primaryRed transition duration-200" onClick={toggleMenu}>
+            Blog
+          </Link>
 
           {/* Mobile Get Started button */}
           <Link href="/qualifying-form" className="block px-4 py-2 bg-primaryRed text-white rounded-lg mt-4 hover:bg-red-600 transition duration-200" onClick={toggleMenu}>
