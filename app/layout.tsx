@@ -1,63 +1,38 @@
-'use client';
-
 import '../styles/globals.css'; // Import Tailwind and custom global styles
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 import NavBar from './components/NavBar';
-import CookieBanner from './components/CookieBanner';
-import HeroSection from './components/HeroSection'; // Import the HeroSection component
-import { usePathname } from 'next/navigation'; // Import the usePathname hook
-import Cookies from 'js-cookie';
-import Link from 'next/link';
+import ClientHeroSection from './components/ClientHeroSection'; // Import ClientHeroSection for homepage Hero
+
+// Metadata for the entire site
+export const metadata = {
+  title: 'Netonline Media | AI Solutions',
+  description: 'Netonline Media - AI-powered business solutions',
+  viewport: 'width=device-width, initial-scale=1',
+  author: 'Isaiah Bizabani',
+  keywords: 'AI-powered solutions London, Custom AI solutions UK, AI business automation, Generative AI London, AI content creation UK',
+};
+// Proper viewport configuration (outside metadata)
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const pathname = usePathname(); // Get the current route
-
-  // Add Google Analytics tracking only if the user has accepted cookies
-  useEffect(() => {
-    const hasConsent = Cookies.get('cookieConsent');
-
-    if (hasConsent === 'accepted') {
-      (function (i: any, s: any, o: string, g: string, r: string, a?: HTMLScriptElement, m?: HTMLElement) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments);
-        };
-        i[r].l = new Date().getTime();
-        a = s.createElement(o) as HTMLScriptElement;
-        m = s.getElementsByTagName(o)[0] as HTMLElement;
-        a.async = true;
-        a.src = g;
-        m?.parentNode?.insertBefore(a, m);
-      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-      (window as any).ga('create', 'G-BPH314L1S0', 'auto');
-      (window as any).ga('send', 'pageview');
-    }
-  }, []);
-
   return (
     <html lang="en">
-      <head>
-        <meta name="description" content="Netonline Media - AI-powered business solutions" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="Isaiah Bizabani" />
-        <meta name="keywords" content="AI-powered solutions London, Custom AI solutions UK, AI business automation, Generative AI London, AI content creation UK" />
-        <title>Netonline Media | AI Solutions</title>
-      </head>
       <body className="bg-lightGrey text-darkGrey">
         {/* Navbar */}
         <NavBar />
 
-        {/* Conditionally render the hero section only on the homepage */}
-        {pathname === '/' && <HeroSection />}
+        {/* Hero section only on homepage */}
+        <ClientHeroSection /> {/* Conditionally renders HeroSection on homepage */}
 
-        {/* Page-specific content */}
-        <main className="container mx-auto p-4">{children}</main>
+        {/* Main content */}
+        <main className="container mx-auto p-4">
+          {children}
+        </main>
 
-        {/* Cookie Banner */}
-        <CookieBanner />
-
-        {/* Footer */}
+        {/* Footer directly in layout.tsx */}
         <footer className="bg-darkGrey text-white py-8">
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Company Information */}
@@ -79,10 +54,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="text-center md:text-right space-y-2">
               <h4 className="text-xl font-bold">Quick Links</h4>
               <ul className="space-y-2">
-                <li><Link href="/cookies" className="text-gray-400 hover:text-white">Cookies Policy</Link></li>
-                <li><Link href="/gdpr-privacy" className="text-gray-400 hover:text-white">GDPR Privacy Statement</Link></li>
-                <li><Link href="/ai-usage" className="text-gray-400 hover:text-white">AI Usage Statement</Link></li>
-                <li><Link href="/terms-and-conditions" className="text-gray-400 hover:text-white">Terms & Conditions</Link></li>
+                <li><a href="/cookies" className="text-gray-400 hover:text-white">Cookies Policy</a></li>
+                <li><a href="/gdpr-privacy" className="text-gray-400 hover:text-white">GDPR Privacy Statement</a></li>
+                <li><a href="/ai-usage" className="text-gray-400 hover:text-white">AI Usage Statement</a></li>
+                <li><a href="/terms-and-conditions" className="text-gray-400 hover:text-white">Terms & Conditions</a></li>
               </ul>
             </div>
           </div>

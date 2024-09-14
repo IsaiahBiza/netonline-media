@@ -1,5 +1,21 @@
+// app/contact/page.tsx (Client Component)
+
 'use client'; // Marks this component as a Client Component
+
 import { useState } from 'react';
+
+// Server-side metadata export
+export const metadata = {
+  title: 'Contact Us | Netonline Media',
+  description: 'Get in touch with Netonline Media for AI-powered business solutions. We’d love to hear from you!',
+  keywords: 'Contact Netonline Media, AI solutions contact, business AI inquiries, AI-powered solutions UK',
+  openGraph: {
+    type: 'website',
+    url: 'https://netonlinemedia.com/contact',
+    title: 'Contact Us | Netonline Media',
+    description: 'Get in touch with Netonline Media for AI-powered business solutions. We’d love to hear from you!',
+  },
+};
 
 export default function ContactPage() {
   // Form state
@@ -62,7 +78,6 @@ export default function ContactPage() {
         )}
 
         <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-          
           {/* Name */}
           <div className="mb-6">
             <label htmlFor="name" className="block text-lg font-medium text-darkGrey">Name</label>

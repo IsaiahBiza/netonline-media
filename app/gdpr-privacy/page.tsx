@@ -1,3 +1,24 @@
+// app/gdpr-privacy/page.tsx (Server Component)
+
+export const metadata = {
+  title: 'GDPR Privacy Statement | Netonline Media',
+  description: 'Learn how Netonline Media collects, processes, and stores your personal data in compliance with the GDPR.',
+  keywords: 'GDPR, privacy policy, data protection, personal data, Netonline Media',
+  openGraph: {
+    type: 'website',
+    url: 'https://netonlinemedia.com/gdpr-privacy',
+    title: 'GDPR Privacy Statement | Netonline Media',
+    description: 'Learn how Netonline Media collects, processes, and stores your personal data in compliance with the GDPR.',
+  },
+  ldJson: {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'GDPR Privacy Statement',
+    description: 'Learn how Netonline Media collects, processes, and stores your personal data in compliance with the GDPR.',
+    url: 'https://netonlinemedia.com/gdpr-privacy',
+  },
+};
+
 export default function GdprPrivacy() {
   return (
     <section className="bg-white py-16">

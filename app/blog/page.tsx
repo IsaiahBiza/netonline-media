@@ -1,12 +1,28 @@
+// app/blog/page.tsx (Server Component)
+
+// Import necessary functions and components
 import Link from 'next/link';
-import { getBlogPosts } from '../../lib/posts'; // Adjusted import path for posts
-import generateRSSFeed from '../../lib/generateRSSFeed'; // Adjusted import path for RSS feed generation
+import { getBlogPosts } from '../../lib/posts'; // Adjust import path as needed
+import generateRSSFeed from '../../lib/generateRSSFeed'; // Adjust import path as needed
 
 type Post = {
   slug: string;
   title: string;
-  date: string; 
+  date: string;
   snippet: string;
+};
+
+// Server-side metadata export
+export const metadata = {
+  title: 'Blog | Netonline Media',
+  description: 'Explore the latest insights, trends, and news on AI-powered business solutions from the Netonline Media blog.',
+  keywords: 'AI blog, business AI solutions, generative AI, AI content creation, AI personalization, LLM chatbots, AI automation',
+  openGraph: {
+    type: 'website',
+    url: 'https://netonlinemedia.com/blog',
+    title: 'Blog | Netonline Media',
+    description: 'Explore the latest insights, trends, and news on AI-powered business solutions from the Netonline Media blog.',
+  },
 };
 
 export default function Blog() {
@@ -17,7 +33,7 @@ export default function Blog() {
 
   return (
     <div className="container mx-auto py-12 px-8">
-      <h1 className="text-4xl font-bold text-center mb-10">Net Online Media Blog</h1>
+      <h1 className="text-4xl font-bold text-center mb-10">Netonline Media Blog</h1>
 
       {posts.length > 0 ? (
         <div className="grid grid-cols-1 gap-8 py-12 px-8">

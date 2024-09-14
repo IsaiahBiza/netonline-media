@@ -1,25 +1,32 @@
-import Head from 'next/head';
-import ServicesHeroSection from '../components/ServicesHeroSection'; // Ensure this path is correct
-import ServicesOverview from '../components/ServicesOverview'; // Ensure this path is correct
+// app/services/page.tsx (Server Component)
 
-// Main Services Page
+// Import components
+import ServicesHeroSection from '../components/ServicesHeroSection'; // Ensure path is correct
+import ServicesOverview from '../components/ServicesOverview'; // Ensure path is correct
+
+// Server-side metadata export
+export const metadata = {
+  title: 'AI Services | Netonline Media',
+  description: 'Explore Netonline Media\'s AI services, including custom generative AI solutions, AI-powered content creation, chatbots, and personalization.',
+  keywords: 'AI services, custom generative AI, AI content creation, LLM chatbots, AI personalization, business AI solutions',
+  openGraph: {
+    type: 'website',
+    url: 'https://netonlinemedia.com/services',
+    title: 'AI Services | Netonline Media',
+    description: 'Explore Netonline Media\'s AI services, including custom generative AI solutions, AI-powered content creation, chatbots, and personalization.',
+  },
+};
+
 export default function Services() {
   return (
     <>
-      <Head>
-        <meta name="description" content="Explore Netonline Media's AI services, including custom generative AI solutions, AI-powered content creation, chatbots, and personalization." />
-        <meta name="keywords" content="AI services, custom generative AI, AI content creation, LLM chatbots, AI personalization, business AI solutions" />
-        <meta name="author" content="Isaiah Bizabani" />
-        <title>AI Services | Netonline Media</title>
-      </Head>
-
-       {/* Hero Section */}
-       <div className="w-full">
+      {/* Hero Section */}
+      <div className="w-full">
         <ServicesHeroSection />
       </div>
 
       {/* Services Overview Section */}
-      <ServicesOverview /> {/* This should import correctly now */}
+      <ServicesOverview />
     </>
   );
 }

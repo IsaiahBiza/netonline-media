@@ -1,3 +1,5 @@
+// app/blog/[slug]/page.tsx (Server Component)
+
 import { getPostData } from 'lib/posts';
 import Link from 'next/link';
 
@@ -20,9 +22,25 @@ const blogPostSlugs = [
   'custom-ai-solutions',
 ];
 
+// Generate metadata for each post dynamically based on the post title and slug
+export async function generateMetadata({ params }: PostProps) {
+  const postData = await getPostData(params.slug);
+  const { title, date } = postData;
+
+  return {
+    title: `${title} | Netonline Media Blog`,
+    description: `Read more about ${title} posted on Netonline Media's blog.`,
+    openGraph: {
+      title: `${title} | Netonline Media Blog`,
+      description: `Read more about ${title} posted on Netonline Media's blog.`,
+      url: `https://netonlinemedia.com/blog/${params.slug}`,
+    },
+  };
+}
+
 export default async function Post({ params }: PostProps) {
   try {
-    // Fetch post data - await if it's an async function
+    // Fetch post data
     const { title, date, contentHtml } = await getPostData(params.slug);
 
     return (
