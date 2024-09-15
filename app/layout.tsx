@@ -7,11 +7,11 @@ import ClientHeroSection from './components/ClientHeroSection'; // Import Client
 export const metadata = {
   title: 'Netonline Media | AI Solutions',
   description: 'Netonline Media - AI-powered business solutions',
-  viewport: 'width=device-width, initial-scale=1',
   author: 'Isaiah Bizabani',
   keywords: 'AI-powered solutions London, Custom AI solutions UK, AI business automation, Generative AI London, AI content creation UK',
 };
-// Proper viewport configuration (outside metadata)
+
+// Dedicated viewport export
 export const viewport = {
   width: 'device-width',
   initialScale: 1,

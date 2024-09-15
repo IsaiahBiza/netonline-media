@@ -45,7 +45,7 @@ export default function AboutUs() {
               With over a decade of experience in the AI industry, our expert team includes AI engineers, data scientists, and digital strategists who are committed to delivering cutting-edge, customized solutions. Our approach is rooted in deep collaboration, ensuring that each AI implementation aligns with the specific needs and challenges of our clients.
             </p>
             <p className="text-lg text-gray-700 mb-6">
-              We work with businesses across various industries, helping them optimize workflows, increase customer engagement, and foster innovation. Whether you're looking to improve customer service through AI chatbots or personalize your marketing efforts with AI-driven insights, Netonline Media is equipped to guide you every step of the way.
+              We work with businesses across various industries, helping them optimize workflows, increase customer engagement, and foster innovation. Whether you&apos;re looking to improve customer service through AI chatbots or personalize your marketing efforts with AI-driven insights, Netonline Media is equipped to guide you every step of the way.
             </p>
             {/* Call to Action */}
             <Link

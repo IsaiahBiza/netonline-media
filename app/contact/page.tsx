@@ -1,8 +1,7 @@
-// app/contact/page.tsx (Client Component)
+// app/contact/page.tsx (Server-Side Component)
 
-'use client'; // Marks this component as a Client Component
-
-import { useState } from 'react';
+// Correct import path for ContactForm
+import ContactForm from '../components/ContactForm'; // Adjusted to go up one directory and into components
 
 // Server-side metadata export
 export const metadata = {
@@ -13,135 +12,14 @@ export const metadata = {
     type: 'website',
     url: 'https://netonlinemedia.com/contact',
     title: 'Contact Us | Netonline Media',
-    description: 'Get in touch with Netonline Media for AI-powered business solutions. We’d love to hear from you!',
+    description: 'Get in touch with Netonline Media for AI-powered business solutions.',
   },
 };
 
 export default function ContactPage() {
-  // Form state
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-
-  // New state to track form submission status
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  // Handle form input change
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  // Handle form submission
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData), // Send the form data as JSON
-      });
-
-      if (response.ok) {
-        console.log('Contact form submitted successfully');
-        setIsSubmitted(true); // Set submission status to true to show success message
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-        });
-      } else {
-        console.error('Error submitting the contact form');
-      }
-    } catch (error) {
-      console.error('Error submitting the contact form:', error);
-    }
-  };
-
   return (
-    <section className="bg-lightGrey py-16 px-6">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center text-darkGrey mb-8">Contact Us</h2>
-
-        {/* Conditionally render success message */}
-        {isSubmitted && (
-          <div className="text-center mb-6">
-            <p className="text-green-600 text-lg font-medium">Form Submission Successful!</p>
-          </div>
-        )}
-
-        <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-          {/* Name */}
-          <div className="mb-6">
-            <label htmlFor="name" className="block text-lg font-medium text-darkGrey">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full p-3 mt-1 border border-gray-300 rounded-lg"
-              required
-            />
-          </div>
-
-          {/* Email */}
-          <div className="mb-6">
-            <label htmlFor="email" className="block text-lg font-medium text-darkGrey">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full p-3 mt-1 border border-gray-300 rounded-lg"
-              required
-            />
-          </div>
-
-          {/* Subject */}
-          <div className="mb-6">
-            <label htmlFor="subject" className="block text-lg font-medium text-darkGrey">Subject</label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              className="w-full p-3 mt-1 border border-gray-300 rounded-lg"
-              required
-            />
-          </div>
-
-          {/* Message */}
-          <div className="mb-6">
-            <label htmlFor="message" className="block text-lg font-medium text-darkGrey">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full p-3 mt-1 border border-gray-300 rounded-lg"
-              rows={5}
-              required
-            />
-          </div>
-
-          {/* Submit Button */}
-          <div className="text-center">
-            <button type="submit" className="bg-primaryRed text-white py-3 px-8 rounded-lg hover:bg-red-600 transition duration-300">
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
+    <div>
+      <ContactForm />
+    </div>
   );
 }

@@ -56,7 +56,7 @@ export default async function Post({ params }: PostProps) {
         {/* Links to Other Posts */}
         <div className="mt-16 text-center font-semibold">
           <h2 className="text-3xl font-semibold mb-8">Other Blog Posts</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8 max-w-screen-md mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-screen-md mx-auto">
             {blogPostSlugs.map((slug) => (
               <Link
                 key={slug}
