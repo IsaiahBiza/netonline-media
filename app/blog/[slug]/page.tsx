@@ -12,6 +12,7 @@ type PostProps = {
 // Array of blog post slugs for linking
 const blogPostSlugs = [
   'ai-and-hyper-personalization-in-financial-services',
+  'ai-content-generation-for-businesses',
   'ai-driven-automation-services',
   'ai-generated-marketing-copy',
   'ai-powered-blog-writing-services',

@@ -1,6 +1,5 @@
 // app/services/ai-chatbots/page.tsx (Server Component)
 
-// Import Link for client-side navigation
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -14,27 +13,6 @@ export const metadata = {
     title: 'AI-Powered Chatbots | Netonline Media',
     description: 'Discover AI-powered chatbots from Netonline Media that transform customer service with 24/7 support, fast response times, and efficiency.',
   },
-  ldJson: {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: 'AI-Powered Chatbots',
-    provider: {
-      '@type': 'Organization',
-      name: 'Netonline Media',
-      url: 'https://netonlinemedia.com',
-    },
-    description: 'Transform your customer service with LLM-based AI-powered chatbots, offering 24/7 intelligent support.',
-    areaServed: 'UK',
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'GBP',
-      price: 'Contact for pricing',
-      eligibleRegion: {
-        '@type': 'Place',
-        name: 'London',
-      },
-    },
-  },
 };
 
 export default function AIChatbots() {
@@ -42,19 +20,19 @@ export default function AIChatbots() {
     <section className="bg-lightGrey py-16 px-6">
       {/* Hero Section */}
       <div
-        className="relative h-[70vh] bg-cover bg-center bg-no-repeat"
+        className="relative w-full h-[80vh] bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/ai-chatbots-hero.jpg')" }}
       >
         <div className="flex flex-col items-center justify-center h-full bg-black bg-opacity-40">
-          <h1 className="text-6xl font-bold text-white text-center mb-4 animate-fadeIn">
+          <h1 className="text-6xl font-bold text-white text-center mb-4">
             LLM-Based AI Chatbots
           </h1>
-          <p className="text-xl text-white text-center mb-8 animate-slideIn">
+          <p className="text-xl text-white text-center mb-8">
             Transform your customer service with intelligent, AI-powered chatbots.
           </p>
           <Link
             href="/qualifying-form"
-            className="inline-block bg-primaryRed text-white py-3 px-6 rounded-lg text-lg hover:bg-red-600 transition duration-300 animate-bounce"
+            className="inline-block bg-primaryRed text-white py-3 px-6 rounded-lg text-lg hover:bg-red-600 transition duration-300"
           >
             Get Started with AI Chatbots
           </Link>

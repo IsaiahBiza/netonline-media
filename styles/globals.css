@@ -23,10 +23,12 @@
 }
 
 /* Custom global styles */
-body {
+html, body {
   font-family: Arial, sans-serif;
   padding: 0;
   margin: 0;
+  width: 100%; /* Ensure full width */
+  overflow-x: hidden; /* Prevent horizontal scroll */
   background-color: #f9f9f9;
   line-height: 1.6;
 }
@@ -44,5 +46,4 @@ a {
   color: #0070f3;
   text-decoration: none;
 }
-/* Ensures images are proportionally scaled and don't look too tall */
 

@@ -4,7 +4,7 @@
         <description><![CDATA[Latest blog posts from Net Online Media]]></description>
         <link>https://netonlinemedia.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 16 Sep 2024 09:55:38 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 16 Sep 2024 12:05:18 GMT</lastBuildDate>
         <atom:link href="https://netonlinemedia.com/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[AI and Hyper-Personalization in Financial Services: Tailoring Products and Advice]]></title>
@@ -63,8 +63,8 @@
         <item>
             <title><![CDATA[Custom AI Solutions: A New Era for Automation in the UK]]></title>
             <description><![CDATA[Explore how custom AI solutions are revolutionizing automation in the UK, providing businesses with tailored AI tools for increased efficiency, cost reduction, and innovation.]]></description>
-            <link>https://netonlinemedia.com/blog/Custom-ai-solutions</link>
-            <guid isPermaLink="true">https://netonlinemedia.com/blog/Custom-ai-solutions</guid>
+            <link>https://netonlinemedia.com/blog/custom-ai-solutions</link>
+            <guid isPermaLink="true">https://netonlinemedia.com/blog/custom-ai-solutions</guid>
         </item>
     </channel>
 </rss>
