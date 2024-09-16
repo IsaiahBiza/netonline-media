@@ -21,16 +21,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className="bg-lightGrey text-darkGrey">
-        {/* Navbar */}
+        {/* NavBar */}
         <NavBar />
 
-        {/* Hero section only on homepage */}
-        <ClientHeroSection /> {/* Conditionally renders HeroSection on homepage */}
+        {/* Content wrapper with top padding to offset fixed NavBar */}
+        <div className="pt-[60px]">
+          {/* Conditionally render Hero section for the homepage */}
+          <ClientHeroSection /> {/* You can add logic to conditionally render this only on the homepage */}
 
-        {/* Main content */}
-        <main className="container mx-auto p-4">
-          {children}
-        </main>
+          {/* Main content */}
+          <main className="container mx-auto p-4">
+            {children}
+          </main>
+        </div>
 
         {/* Footer directly in layout.tsx */}
         <footer className="bg-darkGrey text-white py-8">
@@ -45,19 +48,50 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="text-center md:text-left space-y-2">
               <h4 className="text-xl font-bold">Contact Us</h4>
               <p>Address: 7 Harrow Close, Chessington, Surrey, KT9 2HR</p>
-              <p>Email: <a href="mailto:info@netonlinemedia.com" className="text-primaryRed hover:underline">info@netonlinemedia.com</a></p>
-              <p>Sales: <a href="tel:+442037293305" className="text-primaryRed hover:underline">+44 20 3729 3305</a></p>
-              <p>Support: <a href="tel:+442045992897" className="text-primaryRed hover:underline">+44 20 4599 2897</a></p>
+              <p>
+                Email:{' '}
+                <a href="mailto:info@netonlinemedia.com" className="text-primaryRed hover:underline">
+                  info@netonlinemedia.com
+                </a>
+              </p>
+              <p>
+                Sales:{' '}
+                <a href="tel:+442037293305" className="text-primaryRed hover:underline">
+                  +44 20 3729 3305
+                </a>
+              </p>
+              <p>
+                Support:{' '}
+                <a href="tel:+442045992897" className="text-primaryRed hover:underline">
+                  +44 20 4599 2897
+                </a>
+              </p>
             </div>
 
             {/* Footer Links */}
             <div className="text-center md:text-right space-y-2">
               <h4 className="text-xl font-bold">Quick Links</h4>
               <ul className="space-y-2">
-                <li><a href="/cookies" className="text-gray-400 hover:text-white">Cookies Policy</a></li>
-                <li><a href="/gdpr-privacy" className="text-gray-400 hover:text-white">GDPR Privacy Statement</a></li>
-                <li><a href="/ai-usage" className="text-gray-400 hover:text-white">AI Usage Statement</a></li>
-                <li><a href="/terms-and-conditions" className="text-gray-400 hover:text-white">Terms & Conditions</a></li>
+                <li>
+                  <a href="/cookies" className="text-gray-400 hover:text-white">
+                    Cookies Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="/gdpr-privacy" className="text-gray-400 hover:text-white">
+                    GDPR Privacy Statement
+                  </a>
+                </li>
+                <li>
+                  <a href="/ai-usage" className="text-gray-400 hover:text-white">
+                    AI Usage Statement
+                  </a>
+                </li>
+                <li>
+                  <a href="/terms-and-conditions" className="text-gray-400 hover:text-white">
+                    Terms & Conditions
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
